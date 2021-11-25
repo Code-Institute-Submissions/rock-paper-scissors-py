@@ -1,3 +1,6 @@
+# Some of the code was inspired by this tutorial: Your First Python Game: Rock, Paper, Scissors
+# (https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/)
+
 import random
 
 # Stores wins for the player and computer
