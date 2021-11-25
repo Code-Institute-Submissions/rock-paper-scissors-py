@@ -1,11 +1,11 @@
-from random import randint
+import random
 
 # Stores wins for the player and computer
 player_wins = 0
 cpu_wins = 0
 
 
-def pick_option():
+def player_option():
     """
     Provides input for the player to enter their play option and then checks if
     the entered input key is valid and then return the choice of the player
@@ -19,7 +19,24 @@ def pick_option():
         player_choice = "p"
     else:
         print("Invalid input, try using r = Rock, p = Paper, s = Scissors")
-        pick_option()
+        player_option()
     return player_choice
 
-pick_option()
+player_option()
+
+
+def cpu_option():
+    """
+    Randomly picks a number of 1 - 3 and then represet the numbers with valid input
+    keys to let us know what the computer picked
+    """
+    cpu_choice = random.randint(1,3)
+    if cpu_choice == 1:
+        cpu_choice = "r"
+    elif cpu_choice == 2:
+        cpu_choice = "p"
+    elif cpu_choice == 3:
+        cpu_choice = "s"
+    return cpu_choice
+
+cpu_option()
