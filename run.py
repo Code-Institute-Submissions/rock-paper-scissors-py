@@ -75,3 +75,18 @@ while True:
             player_wins += 1
         elif cpu_choice == "s":
             print("You chose Scissors and the computer chose Scissors, you tie!")
+    
+    # Prints the latest scores
+    print("")
+    print(f"Player wins: {player_wins}")
+    print(f"Computer wins: {cpu_wins}")
+    print("")
+
+    # Checks if the player wants to continue playing another round
+    player_choice = input("Do you want to play again? (y/n)")
+    if player_choice in ["Yes", "yes", "y", "Y"]:
+        pass
+    elif player_choice in ["No", "no", "n", "N"]:
+        break
+    else:
+        break
