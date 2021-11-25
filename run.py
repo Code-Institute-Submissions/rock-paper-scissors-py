@@ -10,19 +10,17 @@ def player_option():
     Provides input for the player to enter their play option and then checks if
     the entered input key is valid and then return the choice of the player
     """
-    player_choice = input("Choose Rock, Paper, or Scissors: ")
+    player_choice = input("Choose Rock, Paper, or Scissors: (r/p/s)")
     if player_choice in ["Rock", "rock", "r", "R"]:
         player_choice = "r"
     elif player_choice in ["Paper", "paper", "p", "P"]:
         player_choice = "p"
     elif player_choice in ["Scissors", "scissors", "s", "S"]:
-        player_choice = "p"
+        player_choice = "s"
     else:
         print("Invalid input, try using r = Rock, p = Paper, s = Scissors")
         player_option()
     return player_choice
-
-player_option()
 
 
 def cpu_option():
@@ -39,4 +37,41 @@ def cpu_option():
         cpu_choice = "s"
     return cpu_choice
 
-cpu_option()
+
+while True:
+    print("")
+    # Calls players option functions and stores the returned value in these variables
+    player_choice = player_option()
+    cpu_choice = cpu_option()
+    print("")
+
+    # Checks every valid winning condition to determine the winner
+    if player_choice == "r":
+        if cpu_choice == "r":
+            print("You chose Rock and the computer chose Rock, you tie!")
+        elif cpu_choice == "p":
+            print("You chose Rock and the computer chose Paper, you lose!")
+            cpu_wins += 1
+        elif cpu_choice == "s":
+            print("You chose Rock and the computer chose Scissors, you win!")
+            player_wins += 1
+
+    elif player_choice == "p":
+        if cpu_choice == "r":
+            print("You chose Paper and the computer chose Rock, you win!")
+            player_wins += 1
+        elif cpu_choice == "p":
+            print("You chose Paper and the computer chose Paper, you tie!")
+        elif cpu_choice == "s":
+            print("You chose Paper and the computer chose Scissors, you lose!")
+            cpu_wins += 1
+            
+    elif player_choice == "s":
+        if cpu_choice == "r":
+            print("You chose Scissors and the computer chose Rock, you lose!")
+            cpu_wins += 1
+        elif cpu_choice == "p":
+            print("You chose Scissors and the computer chose Paper, you win!")
+            player_wins += 1
+        elif cpu_choice == "s":
+            print("You chose Scissors and the computer chose Scissors, you tie!")
